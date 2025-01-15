@@ -1,0 +1,50 @@
+{
+  "rewrites": [
+      {
+        "source": ".*",
+        "destination": "/index.html"
+      }
+  ],
+  "redirects": [
+      {
+        "source": "^/old_path/",
+        "destination": "/new_path/"
+      },
+      {
+        "source": "^/old_articles/([^/]+?)/",
+        "destination": "/new_articles/$1/"
+      },
+      {
+        "source": "^/old_articles2/([^/]+?)/",
+        "destination": "status:404"
+      },
+      {
+        "source": "^/articles2/([^/]+?)/",
+        "destination": "status:302:/temp_articles2/$1/"
+      }
+  ],
+  "redirects_by_ie": [
+      {
+        "source": ".*",
+        "destination": "/ie/"
+      }
+  ],
+  "basic":[
+      "user:pass",
+      "user2:pass2"
+  ],
+  "ip_restrictions":[
+      "111.111.111.111/32",
+      "222.222.222.222/32"
+  ],
+  "ip_restricted_maintenance":[
+      "111.111.111.111/32",
+      "222.222.222.222/32"
+  ],
+  "stale_while_revalidate":"86400",
+  "error_page": {
+      "status404":"/404.html",
+      "status401":"/401.html"
+      "status_ip_503":"/ip_503.html"
+  }
+}
